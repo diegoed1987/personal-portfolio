@@ -393,6 +393,32 @@ img {
   background-color: transparent;
   color: var(--first-color-alt);
 }
+
+.button__submit{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  width: 10rem;  
+}
+
+.button__submit:hover{
+  background-color: var(--first-color-alt);
+}
+
+.button__icon--submit{
+  font-size: 1.25rem;
+  margin-left: var(--mb-0-5);
+  transition: .3s;
+}
+
+.button__submit--flex{
+  display: inline-flex;
+  align-items: center;
+}
 /*==================== ABOUT ====================*/
 .about__img{
   width: 2000px;
@@ -402,7 +428,7 @@ img {
 }
 
 .about__description{
-  text-align: center;
+  text-align: justify;
   margin-bottom: var(--mb-2-5);
 }
 
@@ -500,19 +526,19 @@ img {
 }
 
 .skills__html{
-  width: 90%;
+  width: 60%;
 }
 
 .skills__css{
-  width: 90%;
+  width: 50%;
 }
 
 .skills__js{
-  width: 90%;
+  width: 30%;
 }
 
-.skills__react{
-  width: 90%;
+.skills__angular{
+  width: 40%;
 }
 
 
@@ -522,29 +548,58 @@ img {
 }
 
 .skills__java{
-  width: 90%;
-}
-
-.skills__forms{
-  width: 90%;
+  width: 60%;
 }
 
 .skills__spring{
+  width: 60%;
+}
+
+.skills__oracle{
   width: 90%;
 }
 
+.skills__mysql{
+  width: 60%;
+}
 
-.skills__figma{
+
+.skills__cloud{
+  width: 60%;
+}
+
+.skills__aws{
+  width: 40%;
+}
+
+.skills__forms{
+  width: 80%;
+}
+
+.skills__cobol{
+  width: 50%;
+}
+
+.skills__osb{
+  width: 50%;
+}
+
+
+
+.skills__windows{
   width: 90%;
 }
 
-.skills__sketch{
-  width: 90%;
+.skills__linux{
+  width: 80%;
 }
 
-.skills__photoshop{
-  width: 90%;
+.skills__mac{
+  width: 60%;
 }
+
+
+
 
 .skills__close .skills__list{
   height: 0;
@@ -698,7 +753,7 @@ img {
 }
 
 .services__modal-services{
-  row-gap: 1rem;
+  row-gap: 0rem;
 }
 
 .services__modal-service{
@@ -1145,11 +1200,15 @@ img {
   }
 
   .about__description{
-    text-align: initial;
+    text-align: justify;
   }
 
-  .about__info{
+  /*.about__info{
     justify-content: space-between;
+  }*/
+
+  .about__info{
+    justify-content: space-evenly;
   }
 
   .about__buttons{
