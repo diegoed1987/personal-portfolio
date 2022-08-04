@@ -185,17 +185,17 @@ document.getElementById('form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Sending...';
+   btn.innerText = 'Sending...';
 
    const serviceID = 'default_service';
    const templateID = 'template_sskno2h';
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Message';
+      btn.innerText  = 'Send Message';
       alert('Message sent...');
     }, (err) => {
-      btn.value = 'Send Message';
+      btn.innerText  = 'Send Message';
       alert(JSON.stringify(err));
     });
 });
