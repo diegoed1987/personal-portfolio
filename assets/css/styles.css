@@ -900,7 +900,8 @@ img {
   margin-bottom: var(--mb-0-25);
 }
 
-ul, li{
+.ul-list,
+.experience__modal-list{
   margin-left: 20px; padding-left: 0;
 }
 
