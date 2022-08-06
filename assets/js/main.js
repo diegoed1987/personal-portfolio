@@ -94,8 +94,31 @@ modalCloses.forEach((modalClose) => {
     })
 })
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper('.portfolio__container', {
+/*==================== EXPERIENCE MODAL ====================*/
+const modal_Views = document.querySelectorAll('.experience__modal'),
+      modal_Btns = document.querySelectorAll('.button__experience'),
+      modal_Closes = document.querySelectorAll('.experience__modal-close')
+
+let expModal = function(modal_Click){
+    modal_Views[modal_Click].classList.add('active-modal-experience')
+}
+
+modal_Btns.forEach((modal_Btn, i) => {
+    modal_Btn.addEventListener('click', () => {
+        expModal(i)
+    })
+})
+
+modal_Closes.forEach((modal_Close) => {
+    modal_Close.addEventListener('click', () => {
+        modal_Views.forEach((modal_View) => {
+            modal_View.classList.remove('active-modal-experience')
+        })
+    })
+})
+
+/*==================== EXPERIENCE SWIPER  ====================*/
+let swiper = new Swiper('.experience__container', {
     cssMode: true,
     loop: true,
 
@@ -108,8 +131,6 @@ let swiper = new Swiper('.portfolio__container', {
         clickable: true,
     },
 })
-/*==================== TESTIMONIAL ====================*/
-
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
@@ -194,6 +215,7 @@ document.getElementById('form')
     .then(() => {
       btn.innerText  = 'Send Message';
       alert('Message sent...');
+      document.getElementById('form').reset()
     }, (err) => {
       btn.innerText  = 'Send Message';
       alert(JSON.stringify(err));

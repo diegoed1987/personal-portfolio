@@ -395,18 +395,10 @@ img {
 }
 
 .button__submit{
-  display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
-  padding: 1rem;
-  border-radius: .5rem;
-  font-weight: var(--font-medium);
   cursor: pointer;
-  width: 10rem;  
-}
-
-.button__submit:hover{
-  background-color: var(--first-color-alt);
+  width: 11rem;
+  font-size: var(--font-medium);
+  border: 0;
 }
 
 .button__icon--submit{
@@ -416,6 +408,18 @@ img {
 }
 
 .button__submit--flex{
+  display: inline-flex;
+  align-items: center;
+}
+
+.button__experience{
+  cursor: pointer;
+  width: 8rem;
+  font-size: var(--font-medium);
+  border: 0;
+}
+
+.button__experience--flex{
   display: inline-flex;
   align-items: center;
 }
@@ -785,31 +789,31 @@ img {
   visibility: visible;
 }
 
-/*==================== PORTFOLIO ====================*/
-.portfolio__container{
+/*==================== EXPERIENCE ====================*/
+.experience__container{
   overflow: initial;
 }
 
-.portfolio__content{
+.experience__content{
   padding: 0 1.5rem;
 }
 
-.portfolio__img{
+.experience_img{
   width: 265px;
   border-radius: .5rem;
   justify-self: center;
 }
 
-.portfolio__title{
+.experience__title{
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
 }
 
-.portfolio__description{
+.experience__description{
   margin-bottom: var(--mb-0-75);
 }
 
-.portfolio__button:hover .button__icon{
+.experience__button:hover .button__icon{
   transform: translateX(.25rem)
 }
 
@@ -818,7 +822,7 @@ img {
   content: '';
 }
 
-.swiper-portfolio-icon{
+.swiper-experience-icon{
   font-size: 2rem;
   color: var(--first-color);
 }
@@ -844,36 +848,101 @@ img {
 .swiper-pagination-bullet{
   outline: none;
 }
-/*==================== PROJECT IN MIND ====================*/
-.project{
-  text-align: center;  
+
+
+.experience__modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
 }
 
-.project__bg{
-  background-color: var(--first-color-second);
-  padding-top: 3rem;
+.experience__modal-content{
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: .5rem;
+  max-width: 600px;
 }
 
-.project__title{
-  font-size: var(--h2-font-size);
-  margin-bottom: var(--mb-0-75);
+.experience__modal-experiences{
+  row-gap: 0rem;
 }
 
-.project__description{
+.experience__modal-experience{
+  display: flex;
+}
+
+.experience__modal-title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
   margin-bottom: var(--mb-1-5);
 }
 
-.project__title,
-.project__description{
-  color: #fff;
+.experience__modal-subtitle{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-25);
 }
 
-.project__img{
-  width: 232px;
-  justify-self: center;
+ul, li{
+  margin-left: 20px; padding-left: 0;
 }
-/*==================== TESTIMONIAL ====================*/
 
+.experience__modal-list{
+  list-style: disc;
+}
+
+.experience__modal-close{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  cursor:pointer;
+}
+
+.experience__modal-icon{
+  color: var(--first-color);
+  margin-right: var(--mb-0-25);
+}
+/* Active Modal */
+.active-modal-experience{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.modal-content1{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.modal-content2{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.modal-content3{
+  grid-column: 1/4;
+  grid-row: 2;
+}
 
 /*==================== CONTACT ME ====================*/
 .contact__container{
@@ -1063,27 +1132,6 @@ img {
   .services__modal{
     padding: 0 .5rem;
   }
-  /*------- Project --------
-  .project__img{
-    width: 200px;
-  }
-  ------- Testimonial --------
-  .testimonial__data,
-  .testimonial__header{
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .testimonial__img{
-    margin-right: 0;
-    margin-bottom: var(--mb-0-25);
-  }
-
-  .testimonial__data,
-  .testimonial__description{
-    text-align: center;
-  }*/
-
 }
 
 /* For medium devices */
@@ -1103,8 +1151,7 @@ img {
 
   .about__container,
   .skills__container,
-  .portfolio__content,
-  /*.project__container,*/
+  .experience__content,
   .contact__container,
   .footer__container{
     grid-template-columns: repeat(2, 1fr);
@@ -1244,34 +1291,6 @@ img {
     width: 450px;
   }
 
-  /*.portfolio__img{
-    width: 320px;
-  }
-
-  .portfolio__content{
-    align-items: center;
-  }
-
-  .project{
-    text-align: initial;
-  }
-
-  .project__bg{
-    background: none;
-  }
-
-  .project__container{
-    background-color: var(--first-color-second);
-    border-radius: 1rem;
-    padding: 3rem 2.5rem 0;
-    grid-template-columns: 1fr max-content;
-    column-gap: 3rem;
-  }
-
-  .project_data{
-    padding-top: .8rem;
-  }*/
-
   .footer__container{
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1313,11 +1332,11 @@ img {
     grid-template-columns: repeat(3, 238px);
   }
 
-  .portfolio__content{
+  .experience__content{
     column-gap: 5rem;
   }
 
-  .swiper-portfolio-icon{
+  .swiper-experience-icon{
     font-size: 3.5rem;
   }
 
