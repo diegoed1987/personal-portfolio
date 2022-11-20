@@ -129,9 +129,23 @@ let swiper = new Swiper('.experience__container', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
-    },
+    }
 })
 
+/*==================== CERTIFICATION SWIPER  ====================*/
+let swiper2 = new Swiper('.certification__container', {
+    cssMode: true,
+    loop: true,
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    }
+})
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
